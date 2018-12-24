@@ -1,12 +1,30 @@
 <template>
   <div id="app">
-    Let's build an Instagram Clone!
+    <div class="app">
+      <div class="app-header">
+        <img src="./assets/vuestagram.png" />
+      </div>
+      <app-body />
+      <div class="app-footer">
+       <div class="home-cta">
+        <i class="fas fa-home fa-lg"></i>
+       </div>
+       <div class="upload-cta">
+        <i class="far fa-plus-square fa-lg"></i>
+       </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import Body from "./components/Body";
+
 export default {
-  name: "App"
+  name: "App",
+  components: {
+    "app-body": Body
+  }
 };
 </script>
 
