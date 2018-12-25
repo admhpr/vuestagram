@@ -5,17 +5,20 @@
         <figure class="image is-32x32">
           <img :src="post.userImage">
         </figure>
-        <span class="username">{{post.username}}</span>
+        <span @click="like" class="username">{{post.username}}</span>
       </div>
     </div>
-    <div
-      class="image-container"
-      :class="post.filter"
-      :style="{ backgroundImage: 'url(' + post.postImage + ')' }"
-    ></div>
+    <div @dblclick="like">
+      <div
+        class="image-container"
+        :class="post.filter"
+        :style="{ backgroundImage: 'url(' + post.postImage + ')' }"
+      ></div>
+    </div>
+
     <div class="content">
       <div class="heart">
-        <i class="far fa-heart fa-lg"></i>
+        <i class="far fa-heart fa-lg" :class="{'fas': this.post.hasBeenLiked}" @click="like"></i>
       </div>
       <p class="likes">{{post.likes}} likes</p>
       <p class="caption">
@@ -31,6 +34,12 @@ export default {
   name: "Post",
   props: {
     post: Object
+  },
+  methods: {
+    like() {
+      this.post.hasBeenLiked ? this.post.likes-- : this.post.likes++;
+      this.post.hasBeenLiked = !this.post.hasBeenLiked;
+    }
   }
 };
 </script>
