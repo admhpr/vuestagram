@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <div class="app">
-      <div class="app-header">
+    <div class="app-phone">
+      <div class="phone-header">
         <img src="./assets/vuestagram.png">
       </div>
-      <app-body :posts="posts" :filters="filters"/>
-      <div class="app-footer">
+      <phone-body :posts="posts" :filters="filters"/>
+      <div class="phone-footer">
         <div class="home-cta">
           <i class="fas fa-home fa-lg"></i>
         </div>
@@ -18,8 +18,9 @@
 </template>
 
 <script>
-import Body from "./components/Body";
+import PhoneBody from "./components/PhoneBody";
 
+// mock data
 import posts from "./data/posts";
 import filters from "./data/filters";
 
@@ -32,7 +33,7 @@ export default {
     };
   },
   components: {
-    "app-body": Body
+    "phone-body": PhoneBody
   }
 };
 </script>

@@ -1,13 +1,17 @@
-.app-post {
+.vuestagram-post {
     padding-top: 50px;
 }
 
-.app-post~.app-post {
-    padding-top: 0;
+.vuestagram-post~.vuestagram-post {
+    padding-top: 0px;
 }
 
-.app-post {
+.vuestagram-post {
     padding: 5px 0;
+
+    .details {
+        margin-top: 23px;
+    }
 
     .header {
         height: 30px;
@@ -40,6 +44,7 @@
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
+        z-index: -1;
     }
 
     .content {
@@ -71,6 +76,6 @@
     }
 }
 
-.app-post:last-child {
+.vuestagram-post:last-child {
     margin-bottom: 80px;
 }

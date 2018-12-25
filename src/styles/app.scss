@@ -21,16 +21,17 @@ body,
 .app-phone {
     background-color: white;
     height: 620px;
-    width: 100%;
+    width: 375px;
     overflow: hidden;
 }
 
-.app-header {
-    width: 100%;
+.phone-header {
+    height: auto;
+    width: 375px;
     position: sticky;
     position: -webkit-sticky;
     top: 0;
-    background: #fff;
+    background: #fafafa;
     border-bottom: 1px solid #eeeeee;
     z-index: 99;
 
@@ -41,6 +42,7 @@ body,
         padding-top: 1px;
     }
 
+    // call to action
     .cancel-cta,
     .next-cta {
         position: absolute;
@@ -59,6 +61,7 @@ body,
     }
 }
 
+// main-feed
 .feed {
     height: 100%;
     overflow-y: scroll;
@@ -99,9 +102,9 @@ body,
     overflow-x: hidden;
 }
 
-.app-footer {
+.phone-footer {
     height: 35px;
-    width: 100%;
+    width: 375px;
     position: sticky;
     position: -webkit-sticky;
     bottom: 0;
@@ -160,8 +163,8 @@ body,
         width: 100%;
     }
 
-    .app-header,
-    .app-footer {
+    .phone-header,
+    .phone-footer {
         width: 100%;
     }
 }
