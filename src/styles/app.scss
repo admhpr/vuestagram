@@ -21,12 +21,12 @@ body,
 .app-phone {
     background-color: white;
     height: 620px;
-    width: 375px;
+    width: 100%;
     overflow: hidden;
 }
 
 .app-header {
-    width: 375px;
+    width: 100%;
     position: sticky;
     position: -webkit-sticky;
     top: 0;
@@ -101,7 +101,7 @@ body,
 
 .app-footer {
     height: 35px;
-    width: 375px;
+    width: 100%;
     position: sticky;
     position: -webkit-sticky;
     bottom: 0;
