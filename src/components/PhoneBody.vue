@@ -5,8 +5,13 @@
     </div>
     <div v-if="step === 2">
       <div class="selected-image" :style="{ backgroundImage: 'url(' + image + ')' }"></div>
-      <div class="filter-container">Step two
-        <!-- Where filter choices will be -->
+      <div class="filter-container">
+        <filter-type
+          v-for="filter in filters"
+          :filter="filter"
+          :image="image"
+          :key="filters.indexOf(filter)"
+        ></filter-type>
       </div>
     </div>
   </div>
@@ -15,6 +20,8 @@
 
 <script>
 import Post from "./Post";
+import FilterType from "./FilterType";
+
 export default {
   name: "PhoneBody",
   props: {
@@ -24,7 +31,8 @@ export default {
     image: String
   },
   components: {
-    post: Post
+    post: Post,
+    "filter-type": FilterType
   }
 };
 </script>
