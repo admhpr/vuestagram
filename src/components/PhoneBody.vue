@@ -4,7 +4,11 @@
       <post v-for="post in posts" :post="post" :key="posts.indexOf(post)"></post>
     </div>
     <div v-if="step === 2">
-      <div class="selected-image" :style="{ backgroundImage: 'url(' + image + ')' }"></div>
+      <div
+        class="selected-image"
+        :class="selectedFilter"
+        :style="{ backgroundImage: 'url(' + image + ')' }"
+      ></div>
       <div class="filter-container">
         <filter-type
           v-for="filter in filters"
@@ -28,7 +32,8 @@ export default {
     step: Number,
     posts: Array,
     filters: Array,
-    image: String
+    image: String,
+    selectedFilter: String
   },
   components: {
     post: Post,

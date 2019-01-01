@@ -28,6 +28,7 @@
 </template>
 
 <script>
+import EventBus from "./utils/event-bus.js";
 import PhoneBody from "./components/PhoneBody";
 
 // mock data
@@ -45,6 +46,11 @@ export default {
       selectedFilter: "",
       caption: ""
     };
+  },
+  created() {
+    EventBus.$on("filter-selected", evt => {
+      this.selectedFilter = evt.filter;
+    });
   },
   methods: {
     uploadImage(evt) {
