@@ -4,7 +4,7 @@ $large: 1216px;
 
 html,
 body,
-#app {
+#main {
     height: 100%;
     margin: 0;
     overflow: hidden;
@@ -12,7 +12,7 @@ body,
     font-family: "Roboto", sans-serif;
 }
 
-#app {
+#main {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -93,13 +93,6 @@ body,
     background-size: cover;
     background-position: center center;
     height: 330px;
-}
-
-.filter-container {
-    height: 210px;
-    padding: 30px 10px;
-    white-space: nowrap;
-    overflow-x: hidden;
 }
 
 .phone-footer {

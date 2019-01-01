@@ -18,6 +18,22 @@
         ></filter-type>
       </div>
     </div>
+    <div v-if="step === 3">
+      <div
+        class="selected-image"
+        :class="selectedFilter"
+        :style="{ backgroundImage: 'url(' + image + ')' }"
+      ></div>
+      <div class="caption-container">
+        <textarea
+          class="caption-input"
+          placeholder="Write a caption..."
+          type="text"
+          :value="value"
+          @input="$emit('input', $event.target.value)"
+        ></textarea>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -33,7 +49,8 @@ export default {
     posts: Array,
     filters: Array,
     image: String,
-    selectedFilter: String
+    selectedFilter: String,
+    value: String
   },
   components: {
     post: Post,

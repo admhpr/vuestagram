@@ -20,9 +20,8 @@ export default [
     filter: "clarendon"
   },
   {
-    username: "puppers",
-    userImage:
-      "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/pug_personal.jpg",
+    username: "Evan You",
+    userImage: "https://avatars2.githubusercontent.com/u/499550?s=460&v=4",
     postImage:
       "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/puppers.jpg",
     likes: 49,

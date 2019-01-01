@@ -1,8 +1,11 @@
 <template>
-  <div id="app">
+  <div id="main">
     <div class="app-phone">
       <div class="phone-header">
         <img src="./assets/vuestagram.png">
+        <a class="cancel-cta" v-if="step === 2 || step === 3" @click="goToHome">Cancel</a>
+        <a class="next-cta" v-if="step === 2" @click="step++">Next</a>
+        <a class="next-cta" v-if="step === 3" @click="sharePost">Share</a>
       </div>
       <phone-body
         :step="step"
@@ -13,11 +16,18 @@
         v-model="caption"
       />
       <div class="phone-footer">
-        <div class="home-cta">
+        <div class="home-cta" @click="goToHome">
           <i class="fas fa-home fa-lg"></i>
         </div>
         <div class="upload-cta">
-          <input type="file" name="file" id="file" class="inputfile" @change="uploadImage">
+          <input
+            type="file"
+            name="file"
+            id="file"
+            class="inputfile"
+            @change="uploadImage"
+            :disabled="step !== 1"
+          >
           <label for="file">
             <i class="far fa-plus-square fa-lg"></i>
           </label>
@@ -53,6 +63,12 @@ export default {
     });
   },
   methods: {
+    goToHome() {
+      this.image = "";
+      this.selectedFilter = "";
+      this.caption = "";
+      this.step = 1;
+    },
     uploadImage(evt) {
       const files = evt.target.files;
       if (!files.length) return;
@@ -66,6 +82,18 @@ export default {
 
       // To enable reuploading of same files in Chrome
       document.querySelector("#file").value = "";
+    },
+    sharePost() {
+      const post = {
+        username: "webmaster95",
+        userImage: "https://api.adorable.io/avatars/285/abott@adorable.png",
+        postImage: this.image,
+        likes: 0,
+        caption: this.caption,
+        filter: this.filterType
+      };
+      this.posts.unshift(post);
+      this.goToHome();
     }
   },
   components: {
