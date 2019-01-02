@@ -1,5 +1,9 @@
 # Vuestagram
 
+A simple version of the instagram frontend.
+
+![demo](./src/demo/vuestagram-demo.gif)
+
 ## Project setup
 
 ```
@@ -16,12 +20,6 @@ npm run serve
 
 ```
 npm run build
-```
-
-### Run your tests
-
-```
-npm run test
 ```
 
 ### Lints and fixes files
