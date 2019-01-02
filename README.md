@@ -2,7 +2,7 @@
 
 A simple version of the instagram frontend.
 
-![demo](./src/demo/vuestagram-demo.gif)
+![demo](./src/assets/demo/vuestagram-demo.gif)
 
 ## Project setup
 
